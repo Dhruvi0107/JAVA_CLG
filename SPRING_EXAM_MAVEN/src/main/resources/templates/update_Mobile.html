@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>Update Mobile Page</title>
+	</head>
+	<body>
+		<h1 align="center">UPDATE MOBILE DETAILS</h1>
+		
+		<form align="center" th:action="@{/updateMobile}" method="post">
+			<input type="hidden" th:name="mobile_ID" th:value="${mobile.mobile_ID}">
+			
+			Mobile Name <input type="text" th:name="mobile_Name" th:value="${mobile.mobile_Name}"><br><br>
+			Mobile Ram <input type="text" th:name="mobile_Ram" th:value="${mobile.mobile_Ram}"><br><br>
+			Mobile Price <input type="text" th:name="mobile_Price" th:value="${mobile.mobile_Price}"><br><br>
+			Mobile Battery <input type="text" th:name="mobile_Battery" th:value="${mobile.mobile_Battery}"><br><br>
+			
+			<input type="submit" value="UPDATE">
+		</form>
+		
+	</body>
+</html>

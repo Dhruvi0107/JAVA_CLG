@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>Show Mobile Page</title>
+	</head>
+	<body align="center">
+		<h1>LIST OF ALL THE MOBILES</h1>
+		
+		<table align="center" border="3">
+			<thead>
+				<tr>
+					<th>MOBILE ID</th>
+					<th>MOBILE NAME</th>
+					<th>MOBILE RAM</th>
+					<th>MOBILE PRICE</th>
+					<th>MOBILE BATTERY</th>
+					<th>DELETE ACTION</th>
+					<th>UPDATE ACTION</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="mobile : ${mobiles}">
+					<td th:text="${mobile.mobile_ID}"></td>
+					<td th:text="${mobile.mobile_Name}"></td>
+					<td th:text="${mobile.mobile_Ram}"></td>
+					<td th:text="${mobile.mobile_Price}"></td>
+					<td th:text="${mobile.mobile_Battery}"></td>
+					<td>
+	                    <a th:href="@{/deleteMobile(id=${mobile.mobile_ID})}">Delete</a>
+	                </td>
+	                <td>
+	                    <a th:href="@{/updateMobile(id=${mobile.mobile_ID})}">Update</a>
+	                </td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
