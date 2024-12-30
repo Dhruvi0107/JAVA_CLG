@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Edit Book Page</title>
+		<style>
+	        body {
+	            font-family: Arial, sans-serif;
+	            margin: 0;
+	            padding: 0;
+	            background-color: white;
+	        }
+	
+	        h1 {
+	            text-align: center;
+	            margin-top: 20px;
+	            color: #333;
+	        }
+	
+	        form {
+	            max-width: 600px;
+	            margin: 30px auto;
+	            padding: 20px;
+	            border-radius: 8px;
+	            box-shadow: none;
+	            background-color: transparent;
+	            text-align: center;
+	        }
+	
+	        .form-group {
+	            display: flex;
+	            justify-content: space-between;
+	            margin-bottom: 15px;
+	        }
+	
+	        label {
+	            flex: 1;
+	            margin-right: 10px;
+	            font-weight: bold;
+	            color: #555;
+	        }
+	
+	        input[type="text"] {
+	            flex: 2;
+	            padding: 10px;
+	            border: 1px solid #ccc;
+	            border-radius: 4px;
+	            box-sizing: border-box;
+	        }
+	
+	        input[type="submit"] {
+	            background-color: #4CAF50;
+	            color: white;
+	            padding: 10px 20px;
+	            border: none;
+	            border-radius: 4px;
+	            cursor: pointer;
+	            font-size: 16px;
+	            display: block;
+	            margin: 20px auto;
+	        }
+	
+	        input[type="submit"]:hover {
+	            background-color: #45a049;
+	        }
+	
+	        .message {
+	            color: red;
+	            font-size: 14px;
+	        }
+	
+	        .success {
+	            color: green;
+	        }
+	    </style>
+	</head>
+	<body>
+		 <h1>UPDATE BOOK FORM</h1>
+
+	    <form th:action="@{/updatebook}" method="post" th:object="${book}">
+		    <label for="bname">Book Name</label>
+		    <input type="text" id="bname" name="book_name" th:value="*{book_name}"><br><br>
+		
+		    <label for="bprice">Book Price</label>
+		    <input type="text" id="bprice" name="book_price" th:value="*{book_price}"><br><br>
+		
+		    <label for="bpages">Book Pages</label>
+		    <input type="text" id="bpages" name="book_pages" th:value="*{book_pages}"><br><br>
+		
+		    <label for="aname">Author Name</label>
+		    <input type="text" id="aname" name="author_name" th:value="*{author_name}"><br><br>
+		
+		    <input type="hidden" name="bid" th:value="*{bid}">
+		
+		    <input type="submit" value="UPDATE" />
+		</form>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Show Books</title>
+	</head>
+	<body><br>
+		<h1 align="center">SHOW ALL THE BOOKS</h1>
+		<table border="4" align="center">
+			<thead>
+				<tr>
+					<th>Series</th>
+					<th>Book Name</th>
+					<th>Book Price</th>
+					<th>Book Pages</th>
+					<th>Author Name</th>
+					<th>Update Action</th>
+					<th>Delete Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="book, iterStart : ${books}">
+					<th scope="row">[[${iterStart.index + 1}]]</th>
+					<td>[[${book.book_name}]]</td>
+					<td>[[${book.book_price}]]</td>
+					<td>[[${book.book_pages}]]</td>
+					<td>[[${book.author_name}]]</td>
+					<td>
+						<a th:href="@{'/editbook/'+${book.bid}}">EDIT</a>
+					</td>
+					<td>
+						<a th:href="@{'/deletebook/'+${book.bid}}">DELETE</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	
+		<div style="text-align: center; margin-top: 20px;">
+			<a th:href="@{/}">Back to Home</a>
+		</div>
+	</body>
+</html>

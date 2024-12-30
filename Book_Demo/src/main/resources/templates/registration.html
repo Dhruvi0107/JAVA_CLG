@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>Registration page</title>
+    <style>
+		body {
+		  font-family: Arial, sans-serif;
+		  background-color: white;
+		  margin: 0;
+		  padding: 0;
+		}
+		
+		h1 {
+		  text-align: center;
+		  margin-top: 20px;
+		  color: #333;
+		}
+		
+		form {
+		  max-width: 600px;
+		  margin: 30px auto;
+		  padding: 20px;
+		  border-radius: 8px;
+		  box-shadow: none;
+		  background-color: transparent; 
+		  text-align: center;
+		}
+		
+		.form-group {
+		  display: flex;
+		  justify-content: space-between;
+		  margin-bottom: 15px;
+		}
+		
+		label {
+		  flex: 1;
+		  margin-right: 10px;
+		  font-weight: bold;
+		  color: #555;
+		}
+		
+		input[type="text"],
+		input[type="email"],
+		input[type="password"] {
+		  flex: 2;
+		  padding: 10px;
+		  border: 1px solid #ccc;
+		  border-radius: 4px;
+		  box-sizing: border-box;
+		}
+		
+		input[type="submit"] {
+		  background-color: #4CAF50;
+		  color: white;
+		  padding: 10px 20px;
+		  border: none;
+		  border-radius: 4px;
+		  cursor: pointer;
+		  font-size: 16px;
+		  display: block;
+		  margin: 20px auto;
+		}
+		
+		input[type="submit"]:hover {
+		  background-color: #45a049;
+		}
+    </style>
+  </head>
+  <body><br><br>
+    <h1>REGISTRATION FORM</h1>
+
+    <form th:action="@{/register}" method="post">
+      <label for="fname">First Name</label>
+      <input type="text" id="firstname" name="firstname" placeholder="Enter Your First Name..!"><br><br>
+
+      <label for="lname">Last Name</label>
+      <input type="text" id="lastname" name="lastname" placeholder="Enter Your Last Name..!"><br><br>
+
+      <label for="email">Email ID</label>
+      <input type="email" id="emailid" name="emailid" placeholder="Enter Your Email ID..!"><br><br>
+
+      <label for="pwd">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter Your Password..!"><br><br>
+
+      <label for="age">Age</label>
+      <input type="text" id="age" name="age" placeholder="Enter Your Age..!"><br><br>
+   
+      <label for="cno">Contact No</label>
+      <input type="text" id="contactno" name="contactno" placeholder="Enter Your Contact No..!"><br><br>
+     
+      <input type="submit" value="REGISTER" />
+    </form>
+  </body>
+</html>
